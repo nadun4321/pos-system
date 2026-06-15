@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
 import POS from "./pages/POS";
+import SalesHistory from "./pages/SalesHistory";
 
 function AppLayout({ children }) {
   return (
@@ -77,6 +78,16 @@ export default function App() {
                 </ProtectedRoute>
               }
             />
+            <Route
+  path="/sales"
+  element={
+    <ProtectedRoute>
+      <AppLayout>
+        <SalesHistory />
+      </AppLayout>
+    </ProtectedRoute>
+  }
+/>
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </CartProvider>
